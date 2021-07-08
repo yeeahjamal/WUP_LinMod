@@ -1,0 +1,83 @@
+---
+title: "linear model from Web"
+author: "Your Name"
+date: "Put semester and year"
+output:
+   html_document:
+         toc: true
+         toc_depth: 5
+        
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Read about the data from the website where it is staged.  Then form three regression models; Model1 is SIMS~ARM, Model2 is SIMS~GRIP, and Model3 is SIMS~ARM+GRIP. For each model find a 95% prediction interval of SIMS given a value of 94  for GRIP and 88 for ARM. Compare Model1 with Model3 using anova. Write it up in a markdown document, push the project up to your github account and submit it back to canvas as link. 
+
+ 
+
+
+```{r include=FALSE}
+require(tidyverse)
+require(tigerstats)
+require(rgl)
+require(knitr)
+
+```
+
+```{r}
+data <- read.csv(file="https://onlinestatbook.com/case_studies_rvls/physical_strength/data.txt",sep="",header=TRUE)  
+
+```
+
+## Model 1 SIM~ARMS
+
+### scatterplot
+
+### Numerical results
+
+
+### Inferential  (Build model.1)
+
+#### Predict at target point
+
+
+#### scatterplot with model fit
+  
+
+## Model 2 SIM~GRIP
+
+### Now add in scatterplot
+
+
+### Numerical results 
+
+
+### Inferential  (Build model.2)
+  
+
+#### predict model.2 at target point
+
+#### now add the model fit to our plot for model.2
+  
+
+
+## Model 3 SIM~ARM+GRIP
+
+### Numerical results (cor)
+
+`
+  
+### Inferential  (Build 2-dimentional model.3)
+
+#### predict model.3 at target point
+  
+
+## Comparing nested models ANOVA Test
+
+### Model.1 vs Model.3
+### Model.2 vs Model.3
+
+## Informally compare Model.1 with model.2
+
