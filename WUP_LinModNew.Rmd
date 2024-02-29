@@ -56,16 +56,33 @@ There is a positive relationship between SIMS and ARMS. If this were a perfect l
 cor(SIMS~ARM,data=data)
 ```
 This summarizes the correlation between arm strength and Sim score being around .7  
-### Inferential  (Build model.1)
 
+### Inferential  (Build model.1)
+```{r}
+model.1 <- lm(SIMS~ARM,data=data)
+summary.lm(model.1)
+```
+The P value for the coefficient of arm 0.0000000000000002
 #### Predict at target point
 
+```{r}
+SIMSpredict = predict.lm(model.1, newdata = data.frame(ARM = 88, GRIP = 94),interval = "confidence")
+print(SIMSpredict)
+```
+The prediction for ARM = 88, and GRIP = 94 is .71
 
 #### scatterplot with model fit
-  
+```{r}
+plot(SIMS~ARM,data=data)
+abline(model.1,col="blue")
+```  
+This is a scatter plot with a function on it, at ARM strength 88 the 95 percent confidence interval is between 0.49 and 0.92
 
 ## Model 2 SIM~GRIP
-
+```{r}
+model.1 <- lm(SIMS~GRIP,data=data)
+summary.lm(model.1)
+```
 ### Now add in scatterplot
 
 
@@ -82,7 +99,10 @@ This summarizes the correlation between arm strength and Sim score being around 
 
 
 ## Model 3 SIM~ARM+GRIP
-
+```{r}
+model.1 <- lm(SIMS~ARM+GRIP,data=data)
+summary.lm(model.1)
+```
 ### Numerical results (cor)
 
 `
