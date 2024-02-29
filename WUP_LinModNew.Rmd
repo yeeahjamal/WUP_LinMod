@@ -1,7 +1,7 @@
 ---
 title: "linear model from Web"
-author: "Your Name"
-date: "Put semester and year"
+author: "Jamal Evans"
+date: "Spring 2024"
 output:
    html_document:
          toc: true
@@ -31,10 +31,24 @@ data <- read.csv(file="https://onlinestatbook.com/case_studies_rvls/physical_str
 
 ```
 
+# Introduction:
+We will produce three equation models to get 
+1. sim score based on arm strength
+2. sim score based on grip. strength.
+3. sim score based on both arm and grip strength.
+
+for each model we will predict sim for arm=88, grip=94 
+
+# Methods:
+we have numerical responses (sim score) and Numerical explanitory variables (grip and arm strength). So we use the nuerical~numerical helper file
+
 ## Model 1 SIM~ARMS
 
+## Results
 ### scatterplot
-
+```{r}
+plot(SIMS~ARM,data=davisdata)
+```
 ### Numerical results
 
 
