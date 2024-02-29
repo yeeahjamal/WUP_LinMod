@@ -52,8 +52,10 @@ plot(SIMS~ARM,data=data)
 
 There is a positive relationship between SIMS and ARMS. If this were a perfect linear relationship, all the points would be on a straight line. The correlation between Sim and arm strength is .0
 ### Numerical results
-
-
+```{r}
+cor(SIMS~ARM,data=data)
+```
+This summarizes the correlation between arm strength and Sim score being around .7  
 ### Inferential  (Build model.1)
 
 #### Predict at target point
