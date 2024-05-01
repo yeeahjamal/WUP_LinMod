@@ -84,28 +84,39 @@ model.1 <- lm(SIMS~GRIP,data=data)
 summary.lm(model.1)
 ```
 ### Now add in scatterplot
-
+```{r}
+plot(SIMS~GRIP,data=data)
+abline(model.1,col="blue")
+```  
 
 ### Numerical results 
-
+```{r}
+cor(SIMS~GRIP,data=data)
+```
 
 ### Inferential  (Build model.2)
-  
+```{r}
+model.2 <- lm(SIMS~GRIP,data=data)
+summary.lm(model.1)
+```
 
 #### predict model.2 at target point
 
-#### now add the model fit to our plot for model.2
-  
+```{r}
+SIMSpredict = predict.lm(model.2, newdata = data.frame(ARM = 88, GRIP = 94),interval = "confidence")
+print(SIMSpredict)
+```
 
 
 ## Model 3 SIM~ARM+GRIP
 ```{r}
-model.1 <- lm(SIMS~ARM+GRIP,data=data)
+model.3 <- lm(SIMS~ARM+GRIP,data=data)
 summary.lm(model.1)
 ```
-### Numerical results (cor)
+#Final Results
 
-`
+
+### Numerical results (cor)
   
 ### Inferential  (Build 2-dimentional model.3)
 
