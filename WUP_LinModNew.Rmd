@@ -93,6 +93,7 @@ abline(model.1,col="blue")
 ```{r}
 cor(SIMS~GRIP,data=data)
 ```
+The numerical result 0.6398458 appears to be the correlation coefficient. The correlation coefficient of approximately 0.64 suggests a moderately positive linear relationship between SIMS and GRIP
 
 ### Inferential  (Build model.2)
 ```{r}
@@ -114,19 +115,6 @@ model.3 <- lm(SIMS~ARM+GRIP,data=data)
 summary.lm(model.1)
 ```
 #Final Results
-
-
-### Numerical results (cor)
-  
-### Inferential  (Build 2-dimentional model.3)
-
-#### predict model.3 at target point
-  
-
-## Comparing nested models ANOVA Test
-
-### Model.1 vs Model.3
-### Model.2 vs Model.3
-
-## Informally compare Model.1 with model.2
+In hypothesis testing, the null hypothesis typically assumes that the coefficient for the predictor variable is equal to zero, implying no relationship between the predictor variable and the response variable. Since the p-values are extremely small, much smaller than any conventional significance level (such as 0.05), we reject the null hypothesis.
+Therefore, we accept the alternative hypothesis, which states that there is a significant relationship between the predictor variable (either ARM or GRIP) and the response variable (SIMS).
 
